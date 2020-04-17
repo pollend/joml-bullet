@@ -1,6 +1,6 @@
-# TeraBullet (Terasology Version)
+# joml-bullet
 
-TeraBullet is a version of bullet with extensions for direct interactions for voxel worlds. Written for use with Terasology. this is an implementation of bullet wraps around native bullet using SWIG.
+This is an implementation of bullet wraps around native bullet using SWIG.
 
 # Gradle
 
