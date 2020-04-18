@@ -1,0 +1,36 @@
+From 39af8e9be5dcb8796c7ff790512bb5fe57eff730 Mon Sep 17 00:00:00 2001
+From: Michael <polli104@mail.chapman.edu>
+Date: Fri, 17 Apr 2020 17:04:47 -0700
+Subject: [PATCH] updated discreteDynamicWorld
+
+---
+ src/BulletDynamics/Dynamics/btDiscreteDynamicsWorldMt.h | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/src/BulletDynamics/Dynamics/btDiscreteDynamicsWorldMt.h b/src/BulletDynamics/Dynamics/btDiscreteDynamicsWorldMt.h
+index dccf35d7a..3871d301f 100644
+--- a/src/BulletDynamics/Dynamics/btDiscreteDynamicsWorldMt.h
++++ b/src/BulletDynamics/Dynamics/btDiscreteDynamicsWorldMt.h
+@@ -4,8 +4,8 @@ Copyright (c) 2003-2009 Erwin Coumans  http://bulletphysics.org
+ 
+ This software is provided 'as-is', without any express or implied warranty.
+ In no event will the authors be held liable for any damages arising from the use of this software.
+-Permission is granted to anyone to use this software for any purpose, 
+-including commercial applications, and to alter it and redistribute it freely, 
++Permission is granted to anyone to use this software for any purpose,
++including commercial applications, and to alter it and redistribute it freely,
+ subject to the following restrictions:
+ 
+ 1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
+@@ -55,7 +55,7 @@ public:
+ 	virtual btConstraintSolverType getSolverType() const BT_OVERRIDE { return m_solverType; }
+ 
+ private:
+-	const static size_t kCacheLineSize = 128;
++	static const size_t kCacheLineSize = 128;
+ 	struct ThreadSolver
+ 	{
+ 		btConstraintSolver* solver;
+-- 
+2.20.1
+

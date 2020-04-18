@@ -31,7 +31,19 @@ swigTarget.each { module ->
     }
 }
 
+task PatchBullet{
+    tasks.create(name: "patch-bullet", type: Exec) {
+        description = 'Patch Bullet'
+        executable "patch"
+        args ("-ruN", "-d",  "$rootDir/natives/bullet3", "<", "$rootDir/natives/0001-updated-discreteDynamicWorld.patch" )
+    }
+}
+
+
+
 task Swig{
+    dependsOn ":swig-src:PatchBullet"
+
     description = "Builds C++ bindings from java to Bullet3"
     dependsOn swig_collision
     dependsOn swig_dynamics
